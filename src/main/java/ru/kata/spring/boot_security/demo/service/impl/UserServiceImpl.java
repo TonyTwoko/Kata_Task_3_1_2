@@ -82,13 +82,4 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
-    private void validateUser(User user, Set<Long> roleIds) {
-        if (user.getUsername() == null || user.getUsername().isEmpty()) {
-            throw new IllegalArgumentException("Username cannot be empty");
-        }
-
-        if (roleIds == null || roleIds.isEmpty()) {
-            throw new IllegalArgumentException("User must have at least one role");
-        }
-    }
 }
